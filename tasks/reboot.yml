@@ -1,7 +1,7 @@
 ---
 
 - name: Rebooting the remote system
-  command: shutdown -h now "AutoLogic OS Update Applied"
+  command: shutdown -r now "AutoLogic OS Update Applied"
   async: 0
   poll: 0
   ignore_errors: true
