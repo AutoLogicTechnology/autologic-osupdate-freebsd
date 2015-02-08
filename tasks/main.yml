@@ -1,0 +1,16 @@
+---
+
+- include: rhel.yml
+  when: ansible_os_family == "RedHat"
+  tags:
+    - autologic_osupdate_play_redhat
+
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+  tags:
+    - autologic_osupdate_play_debian
+
+- include: reboot.yml
+  when: autologic_osupdate_reboot
+  tags:
+    - autologic_osupdate_play_reboot

@@ -1,0 +1,13 @@
+---
+
+- name: Rebooting the remote system
+  command: shutdown -h now "AutoLogic OS Update Applied"
+  async: 0
+  poll: 0
+  ignore_errors: true
+  when: autologic_osupdate_reboot_system
+
+- name: Waiting for system to come back
+  local_action: wait_for host={{ invetory_hostname }} state=started
+  when: autologic_osupdate_reboot_system
+  
