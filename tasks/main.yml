@@ -11,6 +11,6 @@
     - autologic_osupdate_play_debian
 
 - include: reboot.yml
-  when: autologic_osupdate_reboot
+  when: autologic_osupdate_reboot_system
   tags:
     - autologic_osupdate_play_reboot
