@@ -4,34 +4,38 @@
   yum:
     name: "{{autologic_osupdate_packages}}"
     state: "{{autologic_osupdate_packages_state}}"
-    disable_gpg_check: "{{autologic_osupdate_gpg_checks}}"
+    disable_gpg_check: "{{autologic_osupdate_no_gpg_checks}}"
   when: ansible_os_family == "RedHat" and autologic_osupdate_apply and not autologic_osupdate_enabled_repositories and not autologic_osupdate_disabled_repositories
+  ignore_errors: "{{autologic_osupdate_ignore_errors}}"
   tags: autologic_osupdate_task_update
 
 - name: Update the OS base packages with exclusions (RedHat)
   yum:
     name: "{{autologic_osupdate_packages}}"
     state: "{{autologic_osupdate_packages_state}}"
-    disable_gpg_check: "{{autologic_osupdate_gpg_checks}}"
+    disable_gpg_check: "{{autologic_osupdate_no_gpg_checks}}"
     disablerepo: "{{autologic_osupdate_disabled_repositories|join(',')}}"
   when: ansible_os_family == "RedHat" and autologic_osupdate_apply and autologic_osupdate_disabled_repositories is defined
+  ignore_errors: "{{autologic_osupdate_ignore_errors}}"
   tags: autologic_osupdate_task_update_with_exclusions
 
 - name: Update the OS base packages with inclusions (RedHat)
   yum:
     name: "{{autologic_osupdate_packages}}"
     state: "{{autologic_osupdate_packages_state}}"
-    disable_gpg_check: "{{autologic_osupdate_gpg_checks}}"
+    disable_gpg_check: "{{autologic_osupdate_no_gpg_checks}}"
     enablerepo: "{{autologic_osupdate_enabled_repositories|join(',')}}"
   when: ansible_os_family == "RedHat" and autologic_osupdate_apply and autologic_osupdate_enabled_repositories is defined
+  ignore_errors: "{{autologic_osupdate_ignore_errors}}"
   tags: autologic_osupdate_task_update_with_inclusions
 
 - name: Update the OS base packages with inclusions and exclusions (RedHat)
   yum:
     name: "{{autologic_osupdate_packages}}"
     state: "{{autologic_osupdate_packages_state}}"
-    disable_gpg_check: "{{autologic_osupdate_gpg_checks}}"
+    disable_gpg_check: "{{autologic_osupdate_no_gpg_checks}}"
     enablerepo: "{{autologic_osupdate_enabled_repositories|join(',')}}"
     disablerepo: "{{autologic_osupdate_disabled_repositories|join(',')}}"
   when: ansible_os_family == "RedHat" and autologic_osupdate_apply and autologic_osupdate_enabled_repositories is defined and autologic_osupdate_disabled_repositories is defined
+  ignore_errors: "{{autologic_osupdate_ignore_errors}}"
   tags: autologic_osupdate_task_update_with_inclusions_and_exclusions
