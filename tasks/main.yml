@@ -1,11 +1,21 @@
 ---
 
-- include: rhel.yml
-  when: ansible_os_family == "RedHat"
-  tags:
-    - autologic_osupdate_play_redhat
+- include: rhel/default.yml
+  when: ansible_os_family == "RedHat" and not autologic_osupdate_enabled_repositories|default(false) and not autologic_osupdate_disabled_repositories|default(false)
+  tags: autologic_osupdate_play_redhat
+
+- include: rhel/disabled_repositories.yml
+  when: ansible_os_family == "RedHat" and autologic_osupdate_disabled_repositories
+  tags: autologic_osupdate_play_redhat_exclusions
+
+- include: rhel/enabled_repositories.yml
+  when: ansible_os_family == "RedHat" and autologic_osupdate_apply and autologic_osupdate_enabled_repositories is defined
+  tags: autologic_osupdate_play_redhat_inclusions
+
+- include: rhel/exclude_include_repositories.yml
+  when: ansible_os_family == "RedHat" and autologic_osupdate_apply and autologic_osupdate_enabled_repositories is defined and autologic_osupdate_disabled_repositories is defined
+  tags: autologic_osupdate_play_redhat_include_exclude
 
 - include: debian.yml
   when: ansible_os_family == "Debian"
-  tags:
-    - autologic_osupdate_play_debian
+  tags: autologic_osupdate_play_debian
