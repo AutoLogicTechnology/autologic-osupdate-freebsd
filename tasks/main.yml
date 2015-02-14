@@ -1,5 +1,6 @@
 ---
 
+# RedHat
 - include: rhel/default.yml
   when: ansible_os_family == "RedHat" and not autologic_osupdate_enabled_repositories|default(false) and not autologic_osupdate_disabled_repositories|default(false)
   tags: autologic_osupdate_play_redhat
@@ -16,6 +17,7 @@
   when: ansible_os_family == "RedHat" and autologic_osupdate_apply and autologic_osupdate_enabled_repositories is defined and autologic_osupdate_disabled_repositories is defined
   tags: autologic_osupdate_play_redhat_include_exclude
 
-- include: debian.yml
+# Debian
+- include: debian/default.yml
   when: ansible_os_family == "Debian"
   tags: autologic_osupdate_play_debian

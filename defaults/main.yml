@@ -3,7 +3,8 @@
 autologic_osupdate_packages: "*"
 autologic_osupdate_packages_state: "latest"
 autologic_osupdate_no_gpg_checks: false
+autologic_osupdates_update_cache: true
 
-# Other options.
+# Other available options.
 # autologic_osupdate_disabled_repositories: "*"
 # autologic_osupdate_enabled_repositories: "*"

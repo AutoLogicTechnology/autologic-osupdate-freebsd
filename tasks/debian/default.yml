@@ -1,0 +1,8 @@
+---
+
+- name: Update the OS base packages (Debian)
+  apt:
+    name: "{{autologic_osupdate_packages}}"
+    state: "{{autologic_osupdate_packages_state}}"
+  ignore_errors: autologic_osupdate_ignore_errors
+  tags: autologic_osupdate_task_update
