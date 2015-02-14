@@ -4,5 +4,6 @@
   apt:
     name: "{{autologic_osupdate_packages}}"
     state: "{{autologic_osupdate_packages_state}}"
+    update_cache: "{{autologic_osupdate_update_cache}}"
   ignore_errors: autologic_osupdate_ignore_errors
   tags: autologic_osupdate_task_update
