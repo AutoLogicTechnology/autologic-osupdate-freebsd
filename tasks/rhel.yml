@@ -5,7 +5,7 @@
     name: "{{autologic_osupdate_packages}}"
     state: "{{autologic_osupdate_packages_state}}"
     disable_gpg_check: "{{autologic_osupdate_gpg_checks}}"
-  when: ansible_os_family == "RedHat" and autologic_osupdate_apply
+  when: ansible_os_family == "RedHat" and autologic_osupdate_apply and not autologic_osupdate_enabled_repositories and not autologic_osupdate_disabled_repositories
   tags: autologic_osupdate_task_update
 
 - name: Update the OS base packages with exclusions (RedHat)
