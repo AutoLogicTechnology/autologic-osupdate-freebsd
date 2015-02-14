@@ -5,7 +5,7 @@
   tags: autologic_osupdate_play_redhat
 
 - include: rhel/disabled_repositories.yml
-  when: ansible_os_family == "RedHat" and autologic_osupdate_disabled_repositories
+  when: ansible_os_family == "RedHat" and autologic_osupdate_disabled_repositories is defined
   tags: autologic_osupdate_play_redhat_exclusions
 
 - include: rhel/enabled_repositories.yml
