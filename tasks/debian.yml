@@ -5,4 +5,3 @@
     name: "*"
     state: latest
   when: ansible_os_family == "Debian"
-  
