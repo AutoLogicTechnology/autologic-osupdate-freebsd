@@ -1,12 +1,10 @@
 ---
 
-# Defaults for standard parameters:
 autologic_osupdate_packages: "*"
 autologic_osupdate_packages_state: "latest"
 autologic_osupdate_no_gpg_checks: false
 autologic_osupdate_apply: true
-autologic_osupdate_ignore_errors: false
 
-# Additional parameters:
+# Other options.
 # autologic_osupdate_disabled_repositories: "*"
 # autologic_osupdate_enabled_repositories: "*"
