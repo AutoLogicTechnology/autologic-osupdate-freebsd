@@ -8,5 +8,5 @@
     enablerepo: "{{autologic_osupdate_enabled_repositories_list|join(',')}}"
     disablerepo: "{{autologic_osupdate_disabled_repositories_list|join(',')}}"
   ignore_errors: autologic_osupdate_ignore_errors
-  tags: autologic_osupdate_task_update_with_inclusions_and_exclusions
+  tags: autologic_osupdate_task_update_with_inclusions_and_exclusions_rhel
   when: autologic_osupdate_enabled_repositories and autologic_osupdate_disabled_repositories

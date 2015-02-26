@@ -7,5 +7,5 @@
     disable_gpg_check: "{{autologic_osupdate_no_gpg_checks}}"
     enablerepo: "{{autologic_osupdate_enabled_repositories_list|join(',')}}"
   ignore_errors: autologic_osupdate_ignore_errors
-  tags: autologic_osupdate_task_update_with_inclusions
+  tags: autologic_osupdate_task_update_with_inclusions_rhel
   when: autologic_osupdate_enabled_repositories

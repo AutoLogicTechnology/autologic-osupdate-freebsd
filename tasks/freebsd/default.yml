@@ -1,0 +1,7 @@
+---
+
+- name: Update everthing using PKG (FreeBSD)
+  pkgng:
+    name: "{{autologic_osupdate_packages}}"
+    state: "{{autologic_osupdate_packages_state}}"
+  tags: autologic_osupdate_task_update_freebsd
