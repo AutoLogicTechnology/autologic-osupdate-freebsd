@@ -1,0 +1,9 @@
+---
+
+- name: Fetch the latest ports tree (FreeBSD)
+  command: /usr/sbin/portsnap fetch
+  tags: autologic_osupdate_task_update_ports_freebsd
+
+- name: Extract the latest port tree (FreeBSD)
+  command: /usr/sbin/portsnap extract
+  tags: autologic_osupdate_task_update_ports_freebsd

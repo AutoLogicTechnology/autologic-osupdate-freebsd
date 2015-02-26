@@ -19,5 +19,9 @@
 
 # FreeBSD
 - include: freebsd/default.yml
-  when: ansible_os_family == "FreeBSD"
-  tags: autologic_osupdate_play_freebsd
+  when: ansible_os_family == "FreeBSD" and autologic_osupdate_use_pkg_freebsd
+  tags: autologic_osupdate_play_freebsd_pkg
+
+- include: freebsd/ports.yml
+  when: ansible_os_family == "FreeBSD" and autologic_osupdate_use_ports_freebsd
+  tags: autologic_osupdate_play_freebsd_ports

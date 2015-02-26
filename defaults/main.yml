@@ -9,6 +9,8 @@ autologic_osupdate_disabled_repositories: false
 autologic_osupdate_enabled_repositories_list: []
 autologic_osupdate_disabled_repositories_list: []
 
+autologic_osupdate_use_pkg_freebsd: true
+autologic_osupdate_use_ports_freebsd: true
 
 # Other available options.
 # autologic_osupdate_disabled_repositories: "*"
