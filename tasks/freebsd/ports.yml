@@ -5,5 +5,5 @@
   tags: autologic_osupdate_task_update_ports_freebsd
 
 - name: Extract the latest port tree (FreeBSD)
-  command: /usr/sbin/portsnap extract
+  command: /usr/sbin/portsnap update
   tags: autologic_osupdate_task_update_ports_freebsd
