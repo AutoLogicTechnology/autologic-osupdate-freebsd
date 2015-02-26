@@ -7,3 +7,4 @@
     disable_gpg_check: "{{autologic_osupdate_no_gpg_checks}}"
   ignore_errors: autologic_osupdate_ignore_errors
   tags: autologic_osupdate_task_update
+  when: not autologic_osupdate_enabled_repositories and not autologic_osupdate_disabled_repositories

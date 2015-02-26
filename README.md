@@ -6,11 +6,11 @@ AutoLogic Technology's OS update role, useful for updating all packages on a fre
 License
 -------
 
-BSD
+GPL v3
 
 Author Information
 ------------------
 
 - Michael Crilly
-- AutoLogic Technology Ltd
+- Autologic Technology Ltd
 - http://www.mcrilly.me/
