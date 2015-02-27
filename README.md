@@ -1,15 +1,12 @@
-OS Update
-=========
+# FreeBSD: OS Update
 
-AutoLogic Technology's OS update role, useful for updating all packages on a fresh VM or Cloud based system, which often are pre-computed or gold images created weeks if not months prior to being used.
+AutoLogic Technology's FreeBSD OS update role, useful for updating all packages on a fresh system, which often come pre-generated or as gold images created weeks, if not months, prior to being used.
 
-License
--------
+## License
 
-GPL v3
+GPLv3
 
-Author Information
-------------------
+## Author Information
 
 - Michael Crilly
 - Autologic Technology Ltd

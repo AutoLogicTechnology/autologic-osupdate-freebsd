@@ -1,0 +1,13 @@
+---
+
+- name: Fetch security updates and patches (FreeBSD)
+  command: /usr/sbin/freebsd-update fetch
+  register: fetch_result
+  changed_when: "'No updates needed to update system' not in fetch_result.stdout"
+  tags: autologic_osupdate_task_fetch_security_freebsd
+
+- name: Apply security updates and patches (FreeBSD)
+  command: /usr/sbin/freebsd-update install
+  register: update_result
+  changed_when: "'No updates are available to install.' not in update_result.stdout"
+  tags: autologic_osupdate_task_apply_security_freebsd
